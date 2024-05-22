@@ -28,11 +28,11 @@ public class PlayerMotor : MonoBehaviour
         
     }
 
-    public void ProcessMove(Vector3 input) {
+    public void ProcessMove(Vector2 inputMovement, Vector2 inputFlight) {
         Vector3 moveDirection = Vector3.zero;
-        moveDirection.x = input.x;
-        moveDirection.z = input.y;
-        moveDirection.y = input.z;
+        moveDirection.x = inputMovement.x;
+        moveDirection.z = inputMovement.y;
+        moveDirection.y = inputFlight.y;
         controller.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
         controller.Move(playerVelocity * Time.deltaTime);
     }
@@ -44,12 +44,6 @@ public class PlayerMotor : MonoBehaviour
         }
         else {
             speed /= 2;
-        }
-    }
-
-    public void Jump() {
-        if(isGrounded) {
-            playerVelocity.y = Mathf.Sqrt(jumpHeight * -3.0f * gravity);
         }
     }
 }

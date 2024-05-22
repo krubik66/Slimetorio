@@ -15,13 +15,13 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Jump",
-                    "type": "Button",
+                    "name": "Flight",
+                    "type": "Value",
                     "id": "7ec3e50b-3556-4714-a256-3465c6c1d258",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Look",
@@ -127,17 +127,6 @@
                 },
                 {
                     "name": "",
-                    "id": "ffd1f433-bf44-4e92-a9f1-a6f4f161f902",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "6162c2f0-e5d1-4bf6-a9fc-f90cd35cbb82",
                     "path": "<Mouse>/delta",
                     "interactions": "",
@@ -172,7 +161,7 @@
                 {
                     "name": "",
                     "id": "9b3444be-1dc3-437d-b90b-e051aea1616b",
-                    "path": "<Keyboard>/leftShift",
+                    "path": "<Keyboard>/leftCtrl",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -201,6 +190,39 @@
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "Space/Shift",
+                    "id": "45c63ce3-c38e-446d-a7b4-986bbda1fbfc",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flight",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "d7ea3282-d004-4477-bd2d-8f52e8ef3d8b",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flight",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "ffad4c09-05b5-4618-8e99-15e5c61aec29",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flight",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },

@@ -26,7 +26,8 @@ public class InputManager : MonoBehaviour
     void Update()
     {
         look.ProcessLook(onFoot.Look.ReadValue<Vector2>());
-        motor.ProcessMove(onFoot.Movement.ReadValue<Vector2>());
+        motor.ProcessMove(onFoot.Movement.ReadValue<Vector2>(),
+                          onFoot.Flight.ReadValue<Vector2>());
     }
 
     private void OnEnable() {

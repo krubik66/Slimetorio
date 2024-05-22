@@ -6,8 +6,8 @@ public class PlayerLook : MonoBehaviour
 {
     public Camera cam;
     private float xRotation = 0f;
-    private float xSensitivity = 30f;
-    private float ySensitivity = 30f;
+    public float xSensitivity = 30f;
+    public float ySensitivity = 30f;
     // Start is called before the first frame update
     public void ProcessLook(Vector2 input) {
         float mouseX = input.x;
