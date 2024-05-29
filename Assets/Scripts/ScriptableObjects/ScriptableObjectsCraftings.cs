@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Crafting", menuName = "ScriptableObjects/Crafting")]
 public class ScriptableObjectsCraftings : ScriptableObject
 {
-    public Dictionary<ScriptableObjectsItem, int> input;
+    public List<ScriptableObjectsItem> input;
 
     public float processTime;
 
