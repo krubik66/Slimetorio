@@ -99,7 +99,7 @@ namespace TL.Core
 
         #region Coroutine
 
-        public void DoWork(int time)
+        public virtual void DoWork(int time)
         {
             StartCoroutine(WorkCoroutine(time));
         }

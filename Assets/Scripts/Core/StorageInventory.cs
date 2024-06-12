@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,12 +12,15 @@ namespace TL.Core
 
         public virtual void InitializeInventory()
         {
-            Inventory = new Dictionary<ResourceType, int>()
-            {
-                { ResourceType.food, 0 },
-                { ResourceType.stone, 0 },
-                { ResourceType.wood, 0 }
-            };
+            Inventory = new Dictionary<ResourceType, int>();
+            // {
+            //     { ResourceType.food, 0 },
+            //     { ResourceType.stone, 0 },
+            //     { ResourceType.wood, 0 }
+            // };
+            foreach (ResourceType type in Enum.GetValues(typeof(ResourceType))) {
+                Inventory[type] = 0;
+            }
         }
 
         public virtual void AddResource(ResourceType r, int amount) { }

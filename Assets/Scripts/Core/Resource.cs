@@ -8,7 +8,8 @@ namespace TL.Core
     {
         food,
         stone,
-        wood
+        wood,
+        plank
     }
 
     public class Resource : MonoBehaviour

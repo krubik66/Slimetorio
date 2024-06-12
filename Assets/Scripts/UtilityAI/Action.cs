@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TL.Core;
+using Unity.VisualScripting;
 
 namespace TL.UtilityAI
 {
     public abstract class Action : ScriptableObject
     {
         public string Name;
+        public ResourceType requiredInput;
         private float _score;
         public float score
         {

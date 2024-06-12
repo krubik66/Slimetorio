@@ -9,6 +9,7 @@ namespace TL.Core
     {   
         public Storage startingStorage;
         public GameObject home;
+        public float processingSpeed = 1;
         public string resourceTag = "resource";
         public float MinDistance = 5f;
         public TopMenu storageUI;

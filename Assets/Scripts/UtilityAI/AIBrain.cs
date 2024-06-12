@@ -13,6 +13,7 @@ namespace TL.UtilityAI
 
         public Action bestAction { get; set; }
         private NPCController npc;
+        public bool isProcessor = false;
 
         [SerializeField] private Billboard billBoard;
         [SerializeField] private Action[] actionsAvailable;
@@ -20,7 +21,12 @@ namespace TL.UtilityAI
         // Start is called before the first frame update
         void Start()
         {
-            npc = GetComponent<NPCController>();
+            if(!isProcessor) {
+                npc = GetComponent<NPCController>();
+            }
+            else {
+                npc = GetComponent<NPCProcessorController>();
+            }
             finishedDeciding = false;
             finishedExecutingBestAction = false;
         }
