@@ -57,14 +57,14 @@ namespace TL.Core
             else if (currentState == State.move)
             {
                 float distance = Vector3.Distance(aiBrain.bestAction.RequiredDestination.position, this.transform.position);
-                Debug.Log($"Destination: {mover.destination.name} | Distance: {distance}");
+                // Debug.Log($"Destination: {mover.destination.name} | Distance: {distance}");
                 if ( distance < 2f)
                 {
                     currentState = State.execute;
                 }
                 else
                 {
-                    Debug.Log("Still moving!");
+                    // Debug.Log("Still moving!");
                     mover.MoveTo(aiBrain.bestAction.RequiredDestination.position);
                 }
             }
@@ -72,12 +72,12 @@ namespace TL.Core
             {
                 if (aiBrain.finishedExecutingBestAction == false)
                 {
-                    Debug.Log("Executing action");
+                    // Debug.Log("Executing action");
                     aiBrain.bestAction.Execute(this);
                 }
                 else if (aiBrain.finishedExecutingBestAction == true)
                 {
-                    Debug.Log("Exit execute state");
+                    // Debug.Log("Exit execute state");
                     currentState = State.decide;
                 }
             }
@@ -118,7 +118,7 @@ namespace TL.Core
                 counter--;
             }
 
-            Debug.Log("I AM WORKING!");
+            // Debug.Log("I AM WORKING!");
             // Logic to update things involved with work
             Inventory.AddResource(ResourceType.wood, 10);
 
@@ -137,7 +137,7 @@ namespace TL.Core
                 counter--;
             }
 
-            Debug.Log("I slept and gained 1 energy!");
+            // Debug.Log("I slept and gained 1 energy!");
             // Logic to update energy
             stats.energy += 5;
 

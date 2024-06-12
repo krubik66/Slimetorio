@@ -5,15 +5,13 @@ using UnityEngine;
 
 public class BottomMenu : MonoBehaviour
 {
-    public Image frame;
     public List<BottomItem> items;
     private int chosenItem = 0;
-    public bool canScroll = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Scroll(0);
     }
 
     // Update is called once per frame
@@ -24,10 +22,10 @@ public class BottomMenu : MonoBehaviour
 
     public void Scroll(int input)
     {
-        if (canScroll)
-        {
-            chosenItem = (chosenItem + input/120) % items.Count;
-        }
+        // Debug.Log("scroll by:" + input);
+        items[chosenItem].transform.localScale = Vector3.one;
+        chosenItem = (chosenItem + input + (items.Count * 10)) % items.Count;
+        items[chosenItem].transform.localScale = Vector3.one*1.1f;
     }
 
     public GameObject GetChosenPrefab()

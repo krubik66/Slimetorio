@@ -100,13 +100,31 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Scroll"",
-                    ""type"": ""Value"",
-                    ""id"": ""f2c756b6-ac44-4775-b7a7-bcbe0b96cf21"",
-                    ""expectedControlType"": ""Axis"",
+                    ""name"": ""Rotate"",
+                    ""type"": ""Button"",
+                    ""id"": ""f81632ea-9303-49bc-b50e-3bbca8dd0026"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ReverseRotate"",
+                    ""type"": ""Button"",
+                    ""id"": ""3bf19b32-b9df-4305-9217-26b2cf123e1e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RightClick"",
+                    ""type"": ""Button"",
+                    ""id"": ""e585a9f5-0c22-4430-a785-7f8e57665a88"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -364,46 +382,35 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""E/Q"",
-                    ""id"": ""3975b869-eeeb-47ce-8e54-9bc59ca0ed29"",
-                    ""path"": ""1DAxis(minValue=-120,maxValue=120)"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Scroll"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""1317e742-694d-45cc-9394-084f1e66dc88"",
+                    ""name"": """",
+                    ""id"": ""7a802d91-a4b7-4dc1-9b9a-2576ef263891"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Scroll"",
+                    ""action"": ""Rotate"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""positive"",
-                    ""id"": ""90499d1f-4c9f-4704-bff8-f2ffb1320ee3"",
+                    ""name"": """",
+                    ""id"": ""27ab352c-a2fd-4499-a5fd-896544d7beb5"",
                     ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Scroll"",
+                    ""action"": ""ReverseRotate"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ebe6def0-078d-4e92-8e6d-91897a427f61"",
-                    ""path"": ""<Mouse>/scroll/y"",
+                    ""id"": ""7b1201a4-6afc-489c-8346-5446cef61a6c"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Scroll"",
+                    ""action"": ""RightClick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -938,7 +945,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_OnFoot_Interact = m_OnFoot.FindAction("Interact", throwIfNotFound: true);
         m_OnFoot_Click = m_OnFoot.FindAction("Click", throwIfNotFound: true);
         m_OnFoot_ChooseItem = m_OnFoot.FindAction("ChooseItem", throwIfNotFound: true);
-        m_OnFoot_Scroll = m_OnFoot.FindAction("Scroll", throwIfNotFound: true);
+        m_OnFoot_Rotate = m_OnFoot.FindAction("Rotate", throwIfNotFound: true);
+        m_OnFoot_ReverseRotate = m_OnFoot.FindAction("ReverseRotate", throwIfNotFound: true);
+        m_OnFoot_RightClick = m_OnFoot.FindAction("RightClick", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1020,7 +1029,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_OnFoot_Interact;
     private readonly InputAction m_OnFoot_Click;
     private readonly InputAction m_OnFoot_ChooseItem;
-    private readonly InputAction m_OnFoot_Scroll;
+    private readonly InputAction m_OnFoot_Rotate;
+    private readonly InputAction m_OnFoot_ReverseRotate;
+    private readonly InputAction m_OnFoot_RightClick;
     public struct OnFootActions
     {
         private @PlayerControls m_Wrapper;
@@ -1033,7 +1044,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_OnFoot_Interact;
         public InputAction @Click => m_Wrapper.m_OnFoot_Click;
         public InputAction @ChooseItem => m_Wrapper.m_OnFoot_ChooseItem;
-        public InputAction @Scroll => m_Wrapper.m_OnFoot_Scroll;
+        public InputAction @Rotate => m_Wrapper.m_OnFoot_Rotate;
+        public InputAction @ReverseRotate => m_Wrapper.m_OnFoot_ReverseRotate;
+        public InputAction @RightClick => m_Wrapper.m_OnFoot_RightClick;
         public InputActionMap Get() { return m_Wrapper.m_OnFoot; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1067,9 +1080,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @ChooseItem.started += instance.OnChooseItem;
             @ChooseItem.performed += instance.OnChooseItem;
             @ChooseItem.canceled += instance.OnChooseItem;
-            @Scroll.started += instance.OnScroll;
-            @Scroll.performed += instance.OnScroll;
-            @Scroll.canceled += instance.OnScroll;
+            @Rotate.started += instance.OnRotate;
+            @Rotate.performed += instance.OnRotate;
+            @Rotate.canceled += instance.OnRotate;
+            @ReverseRotate.started += instance.OnReverseRotate;
+            @ReverseRotate.performed += instance.OnReverseRotate;
+            @ReverseRotate.canceled += instance.OnReverseRotate;
+            @RightClick.started += instance.OnRightClick;
+            @RightClick.performed += instance.OnRightClick;
+            @RightClick.canceled += instance.OnRightClick;
         }
 
         private void UnregisterCallbacks(IOnFootActions instance)
@@ -1098,9 +1117,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @ChooseItem.started -= instance.OnChooseItem;
             @ChooseItem.performed -= instance.OnChooseItem;
             @ChooseItem.canceled -= instance.OnChooseItem;
-            @Scroll.started -= instance.OnScroll;
-            @Scroll.performed -= instance.OnScroll;
-            @Scroll.canceled -= instance.OnScroll;
+            @Rotate.started -= instance.OnRotate;
+            @Rotate.performed -= instance.OnRotate;
+            @Rotate.canceled -= instance.OnRotate;
+            @ReverseRotate.started -= instance.OnReverseRotate;
+            @ReverseRotate.performed -= instance.OnReverseRotate;
+            @ReverseRotate.canceled -= instance.OnReverseRotate;
+            @RightClick.started -= instance.OnRightClick;
+            @RightClick.performed -= instance.OnRightClick;
+            @RightClick.canceled -= instance.OnRightClick;
         }
 
         public void RemoveCallbacks(IOnFootActions instance)
@@ -1246,7 +1271,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnClick(InputAction.CallbackContext context);
         void OnChooseItem(InputAction.CallbackContext context);
-        void OnScroll(InputAction.CallbackContext context);
+        void OnRotate(InputAction.CallbackContext context);
+        void OnReverseRotate(InputAction.CallbackContext context);
+        void OnRightClick(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

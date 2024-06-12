@@ -43,7 +43,7 @@ namespace TL.UtilityAI
             float score = 0f;
             int nextBestActionIndex = 0;
             for(int i = 0; i < actionsAvailable.Length; i++) {
-                Debug.Log("" + actionsAvailable[i].Name);
+                // Debug.Log("" + actionsAvailable[i].Name);
             }
             
             for (int i = 0; i < actionsAvailable.Length; i++)
@@ -52,7 +52,7 @@ namespace TL.UtilityAI
                 {
                     nextBestActionIndex = i;
                     score = actionsAvailable[i].score;
-                    Debug.Log("" + nextBestActionIndex);
+                    // Debug.Log("" + nextBestActionIndex);
                 }
             }
 

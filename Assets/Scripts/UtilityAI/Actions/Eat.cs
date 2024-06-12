@@ -11,7 +11,7 @@ namespace TL.UtilityAI.Actions
     {
         public override void Execute(NPCController npc)
         {
-            Debug.Log("I ate food!");
+            // Debug.Log("I ate food!");
             // Logic for updating everything involved with eating
             npc.stats.hunger -= 30;
             npc.stats.money -= 10;

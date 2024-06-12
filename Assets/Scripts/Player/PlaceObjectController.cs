@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TL.Core;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
@@ -9,9 +10,6 @@ public class PlaceObjectController : MonoBehaviour
 
     [SerializeField]
     private LayerMask Mask;
-
-    public GameObject PlaceableObjectPrefab;
-
     private GameObject PlaceableObject;
 
     public float placeRange = 30f;
@@ -19,6 +17,8 @@ public class PlaceObjectController : MonoBehaviour
     private float _rotation = 0;
 
     public BottomMenu bottomMenu;
+    
+    public Context context;
 
     private bool _placeMode = false;
 
@@ -36,7 +36,14 @@ public class PlaceObjectController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveObject();
+        if (_placeMode)
+        {
+            if (PlaceableObject == null)
+            {
+                changeObject(bottomMenu.GetChosenPrefab());
+            }
+            moveObject();
+        }
     }
 
     void moveObject()
@@ -51,9 +58,8 @@ public class PlaceObjectController : MonoBehaviour
         }
     }
 
-    public void changeObject(GameObject gameObjectPrefab)
+    private void changeObject(GameObject gameObjectPrefab)
     {
-        PlaceableObjectPrefab = gameObjectPrefab;
         if (PlaceableObject != null)
         {
             Destroy(PlaceableObject);
@@ -61,14 +67,45 @@ public class PlaceObjectController : MonoBehaviour
         PlaceableObject = Instantiate(gameObjectPrefab);
     }
 
-    public void rotate(float input)
+    public void rotate(int input)
     {
-        _rotation += input;
+        if (input != 0)
+        {
+            if (_placeMode)
+            {
+                _rotation += input*30;
+            }
+            else
+            {                
+                bottomMenu.Scroll(input);
+            }
+        }
     }
 
-    public void startPlacing()
+    public void HandleClick()
     {
-        
+        if (!_placeMode)
+        {
+            _placeMode = true;
+        }
+        else
+        {
+            Place();
+        }
+    }
+
+    public void HandleRightClick()
+    {
+        if (_placeMode)
+        {
+            _placeMode = false;
+            Destroy(PlaceableObject);
+        }
+    }
+
+    private void Place()
+    {
+        PlaceableObject = null;
     }
 
 }
