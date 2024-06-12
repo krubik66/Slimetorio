@@ -89,6 +89,24 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChooseItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""862f5835-97ea-4fa2-b177-386632271301"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Scroll"",
+                    ""type"": ""Value"",
+                    ""id"": ""f2c756b6-ac44-4775-b7a7-bcbe0b96cf21"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -245,6 +263,149 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Flight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""672e6982-73a4-40e4-be86-42967214f17d"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e4b6ee4-97a7-4ca6-8efa-c3c282e8507d"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1895f2b8-4a68-4b2d-8711-3b015d97a50c"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""055592c5-c666-4fb0-8d5f-585450dc7bc8"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8e3f4cb8-cc05-441b-8f84-883e23272ef7"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""84e6aa56-7217-498a-aefa-3e52728c3783"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f1f1949c-0158-409a-a86c-d61201452ee2"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""da879de0-9664-42db-9d40-8aed9429e524"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f853abdd-c275-4ee9-939e-a9d66bd94ace"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChooseItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""E/Q"",
+                    ""id"": ""3975b869-eeeb-47ce-8e54-9bc59ca0ed29"",
+                    ""path"": ""1DAxis(minValue=-120,maxValue=120)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""1317e742-694d-45cc-9394-084f1e66dc88"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""90499d1f-4c9f-4704-bff8-f2ffb1320ee3"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ebe6def0-078d-4e92-8e6d-91897a427f61"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -776,6 +937,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_OnFoot_Sprint = m_OnFoot.FindAction("Sprint", throwIfNotFound: true);
         m_OnFoot_Interact = m_OnFoot.FindAction("Interact", throwIfNotFound: true);
         m_OnFoot_Click = m_OnFoot.FindAction("Click", throwIfNotFound: true);
+        m_OnFoot_ChooseItem = m_OnFoot.FindAction("ChooseItem", throwIfNotFound: true);
+        m_OnFoot_Scroll = m_OnFoot.FindAction("Scroll", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -856,6 +1019,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_OnFoot_Sprint;
     private readonly InputAction m_OnFoot_Interact;
     private readonly InputAction m_OnFoot_Click;
+    private readonly InputAction m_OnFoot_ChooseItem;
+    private readonly InputAction m_OnFoot_Scroll;
     public struct OnFootActions
     {
         private @PlayerControls m_Wrapper;
@@ -867,6 +1032,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Sprint => m_Wrapper.m_OnFoot_Sprint;
         public InputAction @Interact => m_Wrapper.m_OnFoot_Interact;
         public InputAction @Click => m_Wrapper.m_OnFoot_Click;
+        public InputAction @ChooseItem => m_Wrapper.m_OnFoot_ChooseItem;
+        public InputAction @Scroll => m_Wrapper.m_OnFoot_Scroll;
         public InputActionMap Get() { return m_Wrapper.m_OnFoot; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -897,6 +1064,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Click.started += instance.OnClick;
             @Click.performed += instance.OnClick;
             @Click.canceled += instance.OnClick;
+            @ChooseItem.started += instance.OnChooseItem;
+            @ChooseItem.performed += instance.OnChooseItem;
+            @ChooseItem.canceled += instance.OnChooseItem;
+            @Scroll.started += instance.OnScroll;
+            @Scroll.performed += instance.OnScroll;
+            @Scroll.canceled += instance.OnScroll;
         }
 
         private void UnregisterCallbacks(IOnFootActions instance)
@@ -922,6 +1095,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Click.started -= instance.OnClick;
             @Click.performed -= instance.OnClick;
             @Click.canceled -= instance.OnClick;
+            @ChooseItem.started -= instance.OnChooseItem;
+            @ChooseItem.performed -= instance.OnChooseItem;
+            @ChooseItem.canceled -= instance.OnChooseItem;
+            @Scroll.started -= instance.OnScroll;
+            @Scroll.performed -= instance.OnScroll;
+            @Scroll.canceled -= instance.OnScroll;
         }
 
         public void RemoveCallbacks(IOnFootActions instance)
@@ -1066,6 +1245,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnSprint(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnClick(InputAction.CallbackContext context);
+        void OnChooseItem(InputAction.CallbackContext context);
+        void OnScroll(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

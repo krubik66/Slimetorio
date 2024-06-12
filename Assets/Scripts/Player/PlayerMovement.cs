@@ -33,7 +33,7 @@ public class PlayerMotor : MonoBehaviour
         moveDirection.x = inputMovement.x;
         moveDirection.z = inputMovement.y;
         moveDirection.y = inputFlight.y;
-        controller.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
+        controller.Move(transform.TransformDirection(moveDirection) * (speed * Time.deltaTime));
         controller.Move(playerVelocity * Time.deltaTime);
     }
 

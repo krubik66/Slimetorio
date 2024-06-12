@@ -18,7 +18,7 @@ namespace TL.UtilityAI.Actions
 
         public override void SetRequiredDestination(NPCController npc)
         {
-            RequiredDestination = npc.context.storage.transform;
+            RequiredDestination = npc.context.GetClosestStorage();
             npc.mover.destination = RequiredDestination;
         }
     }
