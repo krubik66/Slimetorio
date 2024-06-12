@@ -10,7 +10,11 @@ namespace TL.UtilityAI.Actions
     {
         public override void Execute(NPCController npc)
         {
-            // Debug.Log("Dropped Off Resource");
+            Debug.Log("Dropped Off Resource");
+            foreach(var item in npc.Inventory.Inventory)
+            {
+                RequiredDestination.GetComponent<StorageInventory>().AddResource(item.Key, item.Value);
+            }            
             npc.Inventory.RemoveAllResource();
             npc.stats.money += 20;
             npc.aiBrain.finishedExecutingBestAction = true;
