@@ -11,7 +11,7 @@ namespace TL.UtilityAI.Actions
 
         public override void Execute(NPCController npc)
         {
-            Debug.Log("Dropped Off Output from process");
+            Debug.Log("Dropped Off Output from process " + requiredInput.ToString());
             foreach(var item in npc.Inventory.Inventory)
             {
                 RequiredDestination.GetComponent<StorageInventory>().AddResource(item.Key, item.Value);
@@ -20,6 +20,7 @@ namespace TL.UtilityAI.Actions
             RequiredDestination.GetComponent<StorageInventory>().RemoveResource(requiredInput, 1);
             npc.Inventory.Inventory[requiredInput] = 1;
             npc.aiBrain.finishedExecutingBestAction = true;
+            Debug.Log(requiredInput.ToString() + ":" + npc.Inventory.Inventory[requiredInput]);
         }
 
         public override void SetRequiredDestination(NPCController npc)

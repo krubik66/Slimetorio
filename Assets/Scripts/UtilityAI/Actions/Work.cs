@@ -12,6 +12,11 @@ namespace TL.UtilityAI.Actions
         public override void Execute(NPCController npc)
         {
             npc.DoWork(3);
+            var resource = RequiredDestination.GetComponent<Resource>();
+            if (resource != null)
+            {
+                npc.Inventory.AddResource(resource.ResourceType, 1);
+            }
         }
 
         public override void SetRequiredDestination(NPCController npc)

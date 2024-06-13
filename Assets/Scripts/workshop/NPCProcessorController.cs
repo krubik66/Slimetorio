@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class NPCProcessorController : NPCController
 {
-    public Transform workshopPlace;
-    public Workshop workshopScript;
+    public Workshop workshop;
 
 
     IEnumerator ProcessCoroutine(int time)
@@ -18,12 +17,12 @@ public class NPCProcessorController : NPCController
                 counter--;
             }
 
-            int amount = Inventory.Inventory[workshopScript.recipe.Item1];
-            Inventory.RemoveResource(workshopScript.recipe.Item1, amount);
-            workshopScript.GiveInput(amount);
+            int amount = Inventory.Inventory[workshop.recipe.Item1];
+            Inventory.RemoveResource(workshop.recipe.Item1, amount);
+            workshop.GiveInput(amount);
 
-            int outputAmount = workshopScript.GetOutput();
-            Inventory.AddResource(workshopScript.recipe.Item2, outputAmount);
+            int outputAmount = workshop.GetOutput();
+            Inventory.AddResource(workshop.recipe.Item2, outputAmount);
 
             // Decide our new best action after you finished this one
             //OnFinishedAction();
@@ -33,6 +32,7 @@ public class NPCProcessorController : NPCController
     
     override public void DoWork(int time)
     {
+        // Debug.Log(":::::");
         StartCoroutine(ProcessCoroutine(time));
     }
 }

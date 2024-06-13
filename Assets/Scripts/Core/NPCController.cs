@@ -120,7 +120,7 @@ namespace TL.Core
 
             // Debug.Log("I AM WORKING!");
             // Logic to update things involved with work
-            Inventory.AddResource(ResourceType.wood, 10);
+            // Inventory.AddResource(ResourceType.wood, 10);
 
             // Decide our new best action after you finished this one
             //OnFinishedAction();

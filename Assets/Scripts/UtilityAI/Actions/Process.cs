@@ -17,7 +17,7 @@ namespace TL.UtilityAI.Actions
         public override void SetRequiredDestination(NPCController npc)
         {
             NPCProcessorController imAProcessor = (NPCProcessorController) npc;
-            RequiredDestination = imAProcessor.workshopPlace;
+            RequiredDestination = imAProcessor.workshop.transform;
             npc.mover.destination = RequiredDestination;
         }
     }

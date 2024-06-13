@@ -73,14 +73,14 @@ namespace TL.Core
                     if (storageSum.ContainsKey(item.Key))
                     {
                         storageSum[item.Key] += item.Value;
-                        Debug.Log(storageSum[item.Key]);
-                        Debug.Log(item.Key);
+                        // Debug.Log(storageSum[item.Key]);
+                        // Debug.Log(item.Key);
                     }
                     else 
                     {
                         storageSum[item.Key] = item.Value;
-                        Debug.Log(storageSum[item.Key]);
-                        Debug.Log(item.Key);
+                        // Debug.Log(storageSum[item.Key]);
+                        // Debug.Log(item.Key);
                     }
                     
                 }

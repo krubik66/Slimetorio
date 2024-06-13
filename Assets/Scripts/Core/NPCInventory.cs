@@ -53,7 +53,7 @@ namespace TL.Core
             {
                 Inventory[r] += amount;
             }
-            Debug.Log(r + "\t" + amountInInventory);
+            // Debug.Log(r + "\t" + amountInInventory);
             OnInventoryChanged?.Invoke();
         }
 
