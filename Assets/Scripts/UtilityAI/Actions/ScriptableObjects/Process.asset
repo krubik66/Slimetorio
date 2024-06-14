@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72cfddb861485649bbcdb185948432f, type: 3}
   m_Name: Process
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Factory work
   requiredInput: 0
   considerations:
   - {fileID: 11400000, guid: de757d40ab6827f4a8127986e2b79918, type: 2}

@@ -88,6 +88,7 @@ namespace TL.Core
         {
             UpdateEnergy();
             UpdateHunger();
+            UpdateDisplayText();
         }
 
         public void UpdateHunger()
