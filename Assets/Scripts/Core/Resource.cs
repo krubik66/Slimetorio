@@ -4,13 +4,6 @@ using UnityEngine;
 
 namespace TL.Core
 {
-    public enum ResourceType
-    {
-        food,
-        stone,
-        wood,
-        plank
-    }
 
     public class Resource : MonoBehaviour
     {

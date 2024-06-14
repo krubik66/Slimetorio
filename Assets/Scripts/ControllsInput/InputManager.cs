@@ -24,6 +24,7 @@ public class InputManager : MonoBehaviour
         onFoot.ReverseRotate.performed += ctx => place.rotate(-1);
         onFoot.Click.performed += ctx => place.HandleClick();
         onFoot.RightClick.performed += ctx => place.HandleRightClick();
+        onFoot.ToggleInfo.performed += ctx => place.HandleToggleInfo();
     }
     void Start()
     {

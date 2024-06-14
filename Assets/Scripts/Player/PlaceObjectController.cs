@@ -103,6 +103,11 @@ public class PlaceObjectController : MonoBehaviour
         }
     }
 
+    public void HandleToggleInfo()
+    {
+        bottomMenu.ToggleInfo();
+    }
+
     private void Place()
     {
         PlaceableObject = null;
