@@ -6,6 +6,7 @@ TagManager:
   tags:
   - resource
   - context
+  - marker
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
+using TMPro;
 using UnityEngine;
 
 public class BottomMenu : MonoBehaviour
@@ -8,6 +8,9 @@ public class BottomMenu : MonoBehaviour
     public List<BottomItem> items;
     private int chosenItem = 0;
     private bool isInfoOpened = false;
+
+    [SerializeField]
+    private TextMeshProUGUI infoText;
 
     // Start is called before the first frame update
     void Start()
@@ -42,10 +45,12 @@ public class BottomMenu : MonoBehaviour
         if (isInfoOpened)
         {
             items[chosenItem].OpenInfoBox();
+            infoText.gameObject.SetActive(false);
         }
         else
         {
             items[chosenItem].CloseInfoBox();
+            infoText.gameObject.SetActive(true);
         }
     }
 

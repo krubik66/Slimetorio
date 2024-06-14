@@ -110,6 +110,7 @@ public class PlaceObjectController : MonoBehaviour
 
     private void Place()
     {
+        PlaceableObject.GetComponent<startPrefab>().PrefabOn();
         PlaceableObject = null;
     }
 

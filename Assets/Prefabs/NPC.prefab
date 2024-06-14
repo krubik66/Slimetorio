@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2593212673659135038}
+  - component: {fileID: 7972438150218073897}
   m_Layer: 3
   m_Name: NPC
   m_TagString: Untagged
@@ -32,6 +33,20 @@ Transform:
   - {fileID: 103698201277965258}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7972438150218073897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2593212673659134978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e94ecd0358dcdd40b7dd15035170b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childNPC: {fileID: 1485073913552183140}
+  worker: {fileID: 0}
 --- !u!1001 &502944705713554465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88,6 +103,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: slime
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 645785245adf1694191d9cdaeb30a2b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -134,12 +153,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737385662465276272}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71aa7f26c61a88c44adfe390b53d1399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   context: {fileID: 0}
+  marker: {fileID: 0}
 --- !u!114 &4893676100090573850
 MonoBehaviour:
   m_ObjectHideFlags: 0

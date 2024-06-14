@@ -8,7 +8,8 @@ namespace TL.Core
     {
         rest,
         resource,
-        storage
+        storage,
+        marker
     }
 
 }

@@ -21,29 +21,31 @@ public class Workshop : MonoBehaviour
         context = GameObject.FindObjectOfType<Context>();
     }
 
-    void Start() {
-        StartCoroutine(Processing());
-    } 
+    // void Start() {
+    //     StartCoroutine(Processing());
+    // } 
 
-    IEnumerator Processing()
-        {
-            float counter = processingTime / context.processingSpeed - 1;
-            while (counter > 0)
-            {
-                yield return new WaitForSeconds(counter);
-                counter = 0;
-            }
-            if(inputAmount > 0) {
-                inputAmount--;
-                outputAmount++;
-            }
+    // IEnumerator Processing()
+    //     {
+    //         float counter = processingTime / context.processingSpeed - 1;
+    //         Debug.Log("Counter until process of workshop: " + counter);
+    //         while (counter > 0)
+    //         {
+    //             yield return new WaitForSeconds(counter);
+    //             counter = 0;
+    //         }
+    //         if(inputAmount > 0) {
+    //             inputAmount--;
+    //             outputAmount++;
+    //             Debug.Log("Processed one time. Current output: " + outputAmount);
+    //         }
 
-            yield return new WaitForSeconds(1);
-        }
+    //         yield return new WaitForSeconds(1);
+    //     }
 
     public int GetOutput() {
-        int difference = outputAmount;
-        outputAmount = 0;
+        int difference = inputAmount;
+        inputAmount = 0;
         return difference;
     }
 

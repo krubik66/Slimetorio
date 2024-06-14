@@ -9,18 +9,18 @@ public class InfoBox : MonoBehaviour
 
     public void setCosts(Dictionary<ResourceType, int> Costs)
     {
-        int n = 0;
-        foreach (var cost in Costs)
-        {
-            costs[n].enabled = true;
-            costs[n].Amount = cost.Value;
-            costs[n].Type = cost.Key;
-            n += 1;
-        }
-        for (int i = n; i < costs.Count; i++)
-        {
-            costs[i].enabled = false;
-        }
+        // int n = 0;
+        // foreach (var cost in Costs)
+        // {
+        //     costs[n].enabled = true;
+        //     costs[n].Amount = cost.Value;
+        //     costs[n].Type = cost.Key;
+        //     n += 1;
+        // }
+        // for (int i = n; i < costs.Count; i++)
+        // {
+        //     costs[i].enabled = false;
+        // }
     }
 
     void OnEnable()

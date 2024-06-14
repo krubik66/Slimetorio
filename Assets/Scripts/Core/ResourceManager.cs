@@ -10,7 +10,9 @@ namespace TL.Core
         food,
         stone,
         wood,
-        plank
+        plank,
+        iron,
+        crystal
     }
 
     public class ResourceTexturesAndModels
@@ -18,8 +20,10 @@ namespace TL.Core
         public static Dictionary<ResourceType, Texture> resourceUITextures = new Dictionary<ResourceType, Texture>
         {
             { ResourceType.wood, Resources.Load<Texture>("UI/wood") },
-            { ResourceType.stone, Resources.Load<Texture>("Textures/StoneTexture") },
-            { ResourceType.plank, Resources.Load<Texture>("Textures/IronTexture") },
+            { ResourceType.iron, Resources.Load<Texture>("UI/iron") },
+            { ResourceType.plank, Resources.Load<Texture>("UI/plank") },
+            { ResourceType.crystal, Resources.Load<Texture>("UI/crystal")},
+            { ResourceType.stone, Resources.Load<Texture>("UI/stone")}
         };
     }
 }

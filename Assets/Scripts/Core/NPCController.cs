@@ -22,6 +22,7 @@ namespace TL.Core
         public Context context;        
 
         public State currentState { get; set; }
+        public Marker marker;
 
         // Start is called before the first frame update
         void Start()
@@ -31,7 +32,24 @@ namespace TL.Core
             Inventory = GetComponent<NPCInventory>();
             stats = GetComponent<Stats>();
             context = GameObject.FindWithTag("context").GetComponent<Context>();
-            currentState = State.decide;
+
+            float distance = Mathf.Infinity;
+            Transform nearestMarker = null;
+            if (context )
+            {
+                List<Transform> markers = context.Destinations[DestinationType.marker];
+                foreach (Transform marker in markers)
+                {
+                    float distanceFromMarker = Vector3.Distance(marker.position, transform.position);
+                    if (distanceFromMarker < distance)
+                    {
+                        nearestMarker = marker;
+                        distance = distanceFromMarker;
+                    }
+                }
+                currentState = State.decide;
+                marker = nearestMarker.GetComponent<Marker>();
+            }
         }
 
         // Update is called once per frame

@@ -11,21 +11,24 @@ namespace TL.Core
         public GameObject home;
         public float processingSpeed = 1;
         public string resourceTag = "resource";
+        public string markerTag = "marker";
         public float MinDistance = 5f;
         public TopMenu storageUI;
         public Dictionary<DestinationType, List<Transform>> Destinations { get; private set; }
 
-        private void Start()
+        private void Awake()
         {
             List<Transform> restDestinations = new List<Transform>() { home.transform };
             List<Transform> storageDestinations = new List<Transform>() { startingStorage.transform };
             List<Transform> resourceDestinations = GetAllResources();
+            List<Transform> markerDestination = GetAllMarkers();
 
             Destinations = new Dictionary<DestinationType, List<Transform>>()
             {
                 { DestinationType.rest, restDestinations},
                 { DestinationType.storage, storageDestinations },
-                { DestinationType.resource, resourceDestinations }
+                { DestinationType.resource, resourceDestinations },
+                { DestinationType.marker, markerDestination }
             };
         }
 
@@ -36,6 +39,20 @@ namespace TL.Core
             foreach (Transform go in gameObjects)
             {
                 if(go.gameObject.tag == resourceTag)
+                {
+                    resources.Add(go);
+                }
+            }
+            return resources;
+        }
+
+        private List<Transform> GetAllMarkers()
+        {
+            Transform[] gameObjects = FindObjectsOfType<Transform>();
+            List<Transform> resources = new List<Transform>();
+            foreach (Transform go in gameObjects)
+            {
+                if(go.gameObject.tag == markerTag)
                 {
                     resources.Add(go);
                 }

@@ -10,7 +10,7 @@ namespace TL.UtilityAI.Actions
     {
         public override void Execute(NPCController npc)
         {
-            Debug.Log("Dropped Off Resource");
+            // Debug.Log("Dropped Off Resource" + npc.Inventory.CheckInventoryCount());
             foreach(var item in npc.Inventory.Inventory)
             {
                 RequiredDestination.GetComponent<StorageInventory>().AddResource(item.Key, item.Value);
