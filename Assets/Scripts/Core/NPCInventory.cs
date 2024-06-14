@@ -16,6 +16,7 @@ namespace TL.Core
         // Start is called before the first frame update
         void Start()
         {
+            InventoryUI = GetComponentInChildren<Billboard>();
             InitializeInventory();
             SetMaxCapacity(_maxCapacity);
         }

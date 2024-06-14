@@ -53,6 +53,7 @@ namespace TL.Core
         // Start is called before the first frame update
         void Start()
         {
+            billboard = GetComponentInChildren<Billboard>();
             hunger = Random.Range(20, 80);
             energy = Random.Range(20, 80);
             money = Random.Range(10, 100);

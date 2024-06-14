@@ -30,6 +30,7 @@ namespace TL.Core
             aiBrain = GetComponent<AIBrain>();
             Inventory = GetComponent<NPCInventory>();
             stats = GetComponent<Stats>();
+            context = GameObject.FindWithTag("context").GetComponent<Context>();
             currentState = State.decide;
         }
 

@@ -27,6 +27,7 @@ namespace TL.UtilityAI
             else {
                 npc = GetComponent<NPCProcessorController>();
             }
+            billBoard = GetComponentInChildren<Billboard>();
             finishedDeciding = false;
             finishedExecutingBestAction = false;
         }
