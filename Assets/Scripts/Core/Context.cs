@@ -14,6 +14,8 @@ namespace TL.Core
         public string markerTag = "marker";
         public float MinDistance = 5f;
         public TopMenu storageUI;
+        public int workerSpeedLevel = 1;
+        private int xp;
         public Dictionary<DestinationType, List<Transform>> Destinations { get; private set; }
 
         private void Awake()
@@ -109,6 +111,15 @@ namespace TL.Core
         public Transform GetClosestStorage()
         {
             return Destinations[DestinationType.storage][0].transform;
+        }
+
+        public void Leveling()
+        {
+            xp++;
+            if (xp >= workerSpeedLevel * workerSpeedLevel * 10)
+            {
+                workerSpeedLevel++;
+            }
         }
 
     }

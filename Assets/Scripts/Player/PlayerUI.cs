@@ -11,6 +11,8 @@ public class PlayerUI : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI promptText;
     [SerializeField]
+    private TextMeshProUGUI infoText;
+    [SerializeField]
     private TextMeshProUGUI keyHint;
     
     [SerializeField]
@@ -23,15 +25,33 @@ public class PlayerUI : MonoBehaviour
         {
             promptText.text = "";
             keyHint.text = "";
+            infoText.text = "";
             image1.color = new Color { a = 0 };
             image2.color = new Color { a = 0 };
             return;
         }
         promptText.text = " => ";
         keyHint.text = "[F]:";
+        infoText.text = "";
         image1.color = new Color { a = 1, r = 255, b = 255, g = 255 };
         image1.texture = ResourceTexturesAndModels.resourceUITextures[types.Item2];
         image2.color = new Color { a = 1, r = 255, b = 255, g = 255 };
         image2.texture = ResourceTexturesAndModels.resourceUITextures[types.Item1];
+    }
+
+    public void UpdateUI(int currentLevel)
+    {
+        if (currentLevel == 0)
+        {
+            promptText.text = "";
+            keyHint.text = "";
+            infoText.text = "";
+            image1.color = new Color { a = 0 };
+            image2.color = new Color { a = 0 };
+            return;
+        }
+        promptText.text = currentLevel + " => " + (++currentLevel);
+        keyHint.text = "[F]:";
+        infoText.text = "Upgrade slime speed";
     }
 }

@@ -39,6 +39,12 @@ public class PlayerInteract : MonoBehaviour
                     }
                 }
             }
+            if(hit.collider.GetComponent<Laboratory>() != null) {
+                Laboratory current = hit.collider.GetComponent<Laboratory>();
+                if (current.enabled == true) {
+                    playerUI.UpdateUI(current.context.workerSpeedLevel);
+                }
+            }
         }
     }
 }
