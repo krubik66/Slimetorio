@@ -10,6 +10,8 @@ public class InputManager : MonoBehaviour
     private PlayerMotor motor;
     private PlayerLook look;
     private PlaceObjectController place;
+
+    private MenuInput menu;
     // Start is called before the first frame update
     void Awake() {
         playerInput = new PlayerControls();
@@ -18,6 +20,7 @@ public class InputManager : MonoBehaviour
         motor = GetComponent<PlayerMotor>();
         look = GetComponent<PlayerLook>();
         place = GetComponent<PlaceObjectController>();
+        menu = GetComponent<MenuInput>();
 
         onFoot.Sprint.performed += ctx => motor.Sprint();
         onFoot.Rotate.performed += ctx => place.rotate(1);
@@ -25,6 +28,7 @@ public class InputManager : MonoBehaviour
         onFoot.Click.performed += ctx => place.HandleClick();
         onFoot.RightClick.performed += ctx => place.HandleRightClick();
         onFoot.ToggleInfo.performed += ctx => place.HandleToggleInfo();
+        onFoot.Pause.performed += ctx => menu.ToggleMenu();
     }
     void Start()
     {

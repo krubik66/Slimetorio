@@ -23,6 +23,7 @@ public class startPrefab : MonoBehaviour
         if (marker != null)
         {
             marker.enabled = true;
+            FindObjectOfType<Context>().addDestination(DestinationType.marker, marker.transform);
         }
     }
 }

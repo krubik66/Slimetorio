@@ -134,6 +134,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""e521a7d0-a4f4-40f3-91be-768e68d904aa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -431,6 +440,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ToggleInfo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cb3c6d9f-769a-4a3a-af43-c5c2641a89f9"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -969,6 +989,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_OnFoot_ReverseRotate = m_OnFoot.FindAction("ReverseRotate", throwIfNotFound: true);
         m_OnFoot_RightClick = m_OnFoot.FindAction("RightClick", throwIfNotFound: true);
         m_OnFoot_ToggleInfo = m_OnFoot.FindAction("ToggleInfo", throwIfNotFound: true);
+        m_OnFoot_Pause = m_OnFoot.FindAction("Pause", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1054,6 +1075,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_OnFoot_ReverseRotate;
     private readonly InputAction m_OnFoot_RightClick;
     private readonly InputAction m_OnFoot_ToggleInfo;
+    private readonly InputAction m_OnFoot_Pause;
     public struct OnFootActions
     {
         private @PlayerControls m_Wrapper;
@@ -1070,6 +1092,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @ReverseRotate => m_Wrapper.m_OnFoot_ReverseRotate;
         public InputAction @RightClick => m_Wrapper.m_OnFoot_RightClick;
         public InputAction @ToggleInfo => m_Wrapper.m_OnFoot_ToggleInfo;
+        public InputAction @Pause => m_Wrapper.m_OnFoot_Pause;
         public InputActionMap Get() { return m_Wrapper.m_OnFoot; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1115,6 +1138,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @ToggleInfo.started += instance.OnToggleInfo;
             @ToggleInfo.performed += instance.OnToggleInfo;
             @ToggleInfo.canceled += instance.OnToggleInfo;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IOnFootActions instance)
@@ -1155,6 +1181,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @ToggleInfo.started -= instance.OnToggleInfo;
             @ToggleInfo.performed -= instance.OnToggleInfo;
             @ToggleInfo.canceled -= instance.OnToggleInfo;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IOnFootActions instance)
@@ -1304,6 +1333,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnReverseRotate(InputAction.CallbackContext context);
         void OnRightClick(InputAction.CallbackContext context);
         void OnToggleInfo(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

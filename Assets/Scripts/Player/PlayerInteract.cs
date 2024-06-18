@@ -32,9 +32,11 @@ public class PlayerInteract : MonoBehaviour
         if(Physics.Raycast(ray, out hit, distance, mask)) {
             if(hit.collider.GetComponent<Marker>() != null) {
                 Marker current = hit.collider.GetComponent<Marker>();
-                playerUI.UpdateUI(current.NextResource());
-                if(inputManager.onFoot.Interact.triggered) {
-                    current.ChangeToNext();
+                if (current.enabled == true) {
+                    playerUI.UpdateUI(current.NextResource());
+                    if(inputManager.onFoot.Interact.triggered) {
+                        current.ChangeToNext();
+                    }
                 }
             }
         }

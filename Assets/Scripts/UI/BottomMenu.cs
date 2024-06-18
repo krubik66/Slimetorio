@@ -15,7 +15,9 @@ public class BottomMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Scroll(0);
+        isInfoOpened = false;
+        chosenItem = 0;
+        items[chosenItem].transform.localScale = Vector3.one*1.1f;
     }
 
     // Update is called once per frame
